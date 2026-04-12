@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>my-ml-journey-portfolio</title>
+  <meta name="description" content="A GitHub Pages portfolio homepage for KiranYesh's machine learning journey." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+      --color-bg: #f7f6f2; --color-surface: #fbfbf9; --color-surface-2: #f3f0ec;
+      --color-border: #d4d1ca; --color-divider: #dcd9d5; --color-text: #28251d;
+      --color-text-muted: #68665f; --color-text-faint: #9a9891; --color-text-inverse: #f9f8f4;
+      --color-primary: #01696f; --color-primary-hover: #0c4e54; --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+      --shadow-md: 0 14px 40px rgba(0,0,0,.08); --radius-md: .75rem; --radius-lg: 1.25rem; --radius-full: 999px;
+      --font-display: 'Instrument Serif', Georgia, serif; --font-body: 'Inter', sans-serif;
+    }
+    [data-theme="dark"] {
+      --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #22211f;
+      --color-border: #393836; --color-divider: #262523; --color-text: #e3e0d8;
+      --color-text-muted: #b0aca3; --color-text-faint: #7b776f; --color-text-inverse: #171614;
+      --color-primary: #4f98a3; --color-primary-hover: #6fb2bc; --shadow-sm: 0 1px 2px rgba(0,0,0,.25);
+      --shadow-md: 0 14px 40px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh; font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6;
+      color: var(--color-text); background:
+      radial-gradient(circle at top left, rgba(1,105,111,.08), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(1,105,111,.06), transparent 30%),
+      var(--color-bg);
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    .container { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; }
+    .skip-link { position: absolute; left: -9999px; }
+    .skip-link:focus { left: 1rem; top: 1rem; background: var(--color-surface); padding: .75rem 1rem; border-radius: var(--radius-md); }
+    header {
+      position: sticky; top: 0; z-index: 20; backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) 0; gap: var(--space-4); }
+    .brand { display: flex; align-items: center; gap: .85rem; font-weight: 700; }
+    .brand svg { width: 34px; height: 34px; color: var(--color-primary); }
+    .nav-links { display: flex; gap: 1rem; align-items: center; }
+    .nav-links a { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .nav-links a:hover { color: var(--color-text); }
+    .theme-btn, .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 44px;
+      padding: .85rem 1.1rem; border-radius: var(--radius-full); border: 1px solid var(--color-border);
+      transition: .18s ease; cursor: pointer;
+    }
+    .theme-btn { background: var(--color-surface); }
+    .btn.primary { background: var(--color-primary); color: var(--color-text-inverse); border-color: transparent; }
+    .btn.primary:hover { background: var(--color-primary-hover); }
+    .btn.secondary { background: var(--color-surface); }
+    main section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+    .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: var(--space-12); align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .55rem; padding: .45rem .8rem; border-radius: var(--radius-full);
+      background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text-muted); font-size: var(--text-sm);
+      margin-bottom: var(--space-5);
+    }
+    h1, h2 { font-family: var(--font-display); line-height: 1.02; letter-spacing: -.02em; }
+    h1 { font-size: var(--text-3xl); max-width: 10ch; }
+    .hero p { margin-top: var(--space-5); max-width: 56ch; color: var(--color-text-muted); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: var(--space-8); }
+    .hero-card, .card {
+      background: color-mix(in srgb, var(--color-surface) 86%, transparent); border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+    }
+    .hero-card { padding: var(--space-8); }
+    .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: var(--space-6); }
+    .stat { padding: 1rem; background: var(--color-surface-2); border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+    .stat strong { display: block; font-size: var(--text-lg); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: var(--space-8); }
+    .section-head p { max-width: 60ch; color: var(--color-text-muted); }
+    h2 { font-size: var(--text-2xl); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .card { padding: var(--space-6); }
+    .card h3 { font-size: var(--text-lg); line-height: 1.2; margin-bottom: .75rem; }
+    .card p, .card li { color: var(--color-text-muted); }
+    .list { list-style: none; display: grid; gap: .6rem; margin-top: .9rem; }
+    .timeline { display: grid; gap: 1rem; }
+    .timeline-item { display: grid; grid-template-columns: 96px 1fr; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--color-divider); }
+    .timeline-item:first-child { border-top: none; }
+    .timeline-item .tag { color: var(--color-primary); font-weight: 700; font-size: var(--text-sm); }
+    .pill-row { display: flex; flex-wrap: wrap; gap: .7rem; }
+    .pill { padding: .55rem .85rem; border-radius: var(--radius-full); background: var(--color-surface); border: 1px solid var(--color-border); font-size: var(--text-sm); }
+    .cta {
+      padding: var(--space-10); text-align: center; background: linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 16%, var(--color-surface)), var(--color-surface));
+    }
+    .cta p { margin: .75rem auto 1.25rem; color: var(--color-text-muted); max-width: 48ch; }
+    footer { padding: 2rem 0 3rem; color: var(--color-text-muted); }
+    @media (max-width: 900px) {
+      .hero, .grid-3 { grid-template-columns: 1fr; }
+      .section-head { align-items: start; flex-direction: column; }
+      .nav { flex-wrap: wrap; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { width: 100%; justify-content: space-between; overflow-x: auto; }
+      h1 { max-width: 100%; }
+      .timeline-item { grid-template-columns: 1fr; gap: .4rem; }
+      .hero-card, .card, .cta { padding: 1.25rem; }
+      .stat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="KiranYesh home">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" aria-hidden="true">
+          <path d="M12 50L32 14L52 50" />
+          <path d="M22 37H42" />
+          <circle cx="32" cy="37" r="3" fill="currentColor" stroke="none" />
+        </svg>
+        <span>KiranYesh · ML Portfolio</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#journey">Journey</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="https://github.com/KiranYesh/My-ML-Journey" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+      </nav>
+      <button class="theme-btn" data-theme-toggle aria-label="Switch theme">◐</button>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero" id="top">
+      <div>
+        <div class="eyebrow">Machine Learning · Data Science · Continuous Learning</div>
+        <h1>Building my machine learning journey in public.</h1>
+        <p>
+          This portfolio page turns the current repository into a cleaner public-facing homepage. It highlights the same core themes already present in the repo: learning progress, notebooks, projects, resources, and an evolving focus in machine learning.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://github.com/KiranYesh/My-ML-Journey" target="_blank" rel="noopener noreferrer">Explore repository</a>
+          <a class="btn secondary" href="#projects">View roadmap sections</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Repository snapshot">
+        <h3 style="margin-bottom: .6rem;">Repository snapshot</h3>
+        <p style="color: var(--color-text-muted);">A focused space for documenting ML progress, storing experiments, and sharing practical notes.</p>
+        <div class="stat-grid">
+          <div class="stat"><strong>Python</strong><span>Primary language</span></div>
+          <div class="stat"><strong>Scikit-Learn</strong><span>Core ML toolkit</span></div>
+          <div class="stat"><strong>Jupyter</strong><span>Experiment workflow</span></div>
+          <div class="stat"><strong>VS Code</strong><span>Daily build environment</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="section-head">
+        <div>
+          <h2>About this repo</h2>
+        </div>
+        <p>
+          The current repository README says this project is a dedicated place to document learning progress, store practice notebooks, and showcase projects while going deeper into data science and AI.
+        </p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Learning archive</h3>
+          <p>Use this section to surface notebooks, concept notes, and mini experiments as visible milestones instead of leaving them buried in folders.</p>
+        </article>
+        <article class="card">
+          <h3>Project showcase</h3>
+          <p>Turn end-to-end ML projects into featured case studies with a short problem statement, approach, tools used, and result.</p>
+        </article>
+        <article class="card">
+          <h3>Resource hub</h3>
+          <p>Collect your best books, articles, tutorials, and takeaways so visitors understand how you learn and how consistently you build.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="section-head">
+        <div>
+          <h2>Journey map</h2>
+        </div>
+        <p>A strong portfolio works best when it shows momentum. This timeline layout mirrors the README’s roadmap and current-focus style in a more visual format.</p>
+      </div>
+      <div class="card timeline">
+        <div class="timeline-item">
+          <div class="tag">Stage 01</div>
+          <div>
+            <h3>Foundations</h3>
+            <p>Python, data handling, notebook practice, and core ML concepts.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tag">Stage 02</div>
+          <div>
+            <h3>Hands-on experiments</h3>
+            <p>Exploratory notebooks, preprocessing practice, and first predictive modeling workflows.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tag">Stage 03</div>
+          <div>
+            <h3>Project building</h3>
+            <p>End-to-end project work with datasets, scripts, and clearer storytelling around decisions and results.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tag">Stage 04</div>
+          <div>
+            <h3>Deeper specialization</h3>
+            <p>Update this block with your active topic such as feature engineering, model evaluation, or deployment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <div>
+          <h2>Tools & stack</h2>
+        </div>
+        <p>The repo currently lists Python, NumPy, Pandas, Scikit-Learn, Jupyter Notebook, Git, and VS Code as the working stack. This section presents them more cleanly for visitors.</p>
+      </div>
+      <div class="card">
+        <div class="pill-row">
+          <span class="pill">Python</span>
+          <span class="pill">NumPy</span>
+          <span class="pill">Pandas</span>
+          <span class="pill">Scikit-Learn</span>
+          <span class="pill">Jupyter Notebook</span>
+          <span class="pill">Git</span>
+          <span class="pill">VS Code</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <div>
+          <h2>Suggested sections</h2>
+        </div>
+        <p>These are the easiest portfolio sections to expand next without changing the spirit of the repository.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Featured notebooks</h3>
+          <ul class="list">
+            <li>Data cleaning walkthrough</li>
+            <li>EDA and visualization story</li>
+            <li>Model comparison notebook</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Case-study projects</h3>
+          <ul class="list">
+            <li>Problem definition</li>
+            <li>Dataset and preprocessing</li>
+            <li>Model, metrics, and outcome</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Learning insights</h3>
+          <ul class="list">
+            <li>What worked</li>
+            <li>What failed</li>
+            <li>What you are learning next</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="card cta">
+        <h2>Ready to publish this as GitHub Pages?</h2>
+        <p>Add this file as <strong>index.html</strong> in your repo, then enable GitHub Pages from the main branch in repository settings.</p>
+        <a class="btn primary" href="https://github.com/KiranYesh/My-ML-Journey/settings/pages" target="_blank" rel="noopener noreferrer">Open Pages settings</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="width:100%; padding:0;">
+      <p>Designed as a starter portfolio homepage for the My-ML-Journey repository.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const btn = document.querySelector('[data-theme-toggle]');
+      const root = document.documentElement;
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      btn.textContent = theme === 'dark' ? '☀︎' : '◐';
+      btn.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        btn.textContent = theme === 'dark' ? '☀︎' : '◐';
+      });
+    }());
+  </script>
+</body>
+</html>
