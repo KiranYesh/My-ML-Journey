@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>my-ml-journey-portfolio</title>
-  <meta name="description" content="A GitHub Pages portfolio homepage for KiranYesh's machine learning journey." />
+  <title>SAIKIRAN YESHAMINA | ML Portfolio</title>
+  <meta name="description" content="SAIKIRAN YESHAMINA's Machine Learning learning journey, projects, and resources." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    :root, [data-theme="light"] {
+    /* ===== CSS Variables ===== */
+    :root,
+    [data-theme="light"] {
       --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
       --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
       --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
@@ -17,228 +20,818 @@
       --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
       --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
       --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
-      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
-      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
-      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
-      --color-bg: #f7f6f2; --color-surface: #fbfbf9; --color-surface-2: #f3f0ec;
-      --color-border: #d4d1ca; --color-divider: #dcd9d5; --color-text: #28251d;
-      --color-text-muted: #68665f; --color-text-faint: #9a9891; --color-text-inverse: #f9f8f4;
-      --color-primary: #01696f; --color-primary-hover: #0c4e54; --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
-      --shadow-md: 0 14px 40px rgba(0,0,0,.08); --radius-md: .75rem; --radius-lg: 1.25rem; --radius-full: 999px;
-      --font-display: 'Instrument Serif', Georgia, serif; --font-body: 'Inter', sans-serif;
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      --color-bg: #f7f6f2;
+      --color-surface: #fbfbf9;
+      --color-surface-2: #f3f0ec;
+      --color-border: #d4d1ca;
+      --color-divider: #dcd9d5;
+      --color-text: #28251d;
+      --color-text-muted: #68665f;
+      --color-text-faint: #9a9891;
+      --color-text-inverse: #f9f8f4;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 14px 40px rgba(0, 0, 0, 0.08);
+
+      --radius-md: 0.75rem;
+      --radius-lg: 1.25rem;
+      --radius-full: 999px;
+
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'Inter', sans-serif;
     }
+
     [data-theme="dark"] {
-      --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #22211f;
-      --color-border: #393836; --color-divider: #262523; --color-text: #e3e0d8;
-      --color-text-muted: #b0aca3; --color-text-faint: #7b776f; --color-text-inverse: #171614;
-      --color-primary: #4f98a3; --color-primary-hover: #6fb2bc; --shadow-sm: 0 1px 2px rgba(0,0,0,.25);
-      --shadow-md: 0 14px 40px rgba(0,0,0,.35);
+      --color-bg: #171614;
+      --color-surface: #1c1b19;
+      --color-surface-2: #22211f;
+      --color-border: #393836;
+      --color-divider: #262523;
+      --color-text: #e3e0d8;
+      --color-text-muted: #b0aca3;
+      --color-text-faint: #7b776f;
+      --color-text-inverse: #171614;
+      --color-primary: #4f98a3;
+      --color-primary-hover: #6fb2bc;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+      --shadow-md: 0 14px 40px rgba(0, 0, 0, 0.35);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    /* ===== Reset & Base ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      min-height: 100vh; font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6;
-      color: var(--color-text); background:
-      radial-gradient(circle at top left, rgba(1,105,111,.08), transparent 30%),
-      radial-gradient(circle at bottom right, rgba(1,105,111,.06), transparent 30%),
-      var(--color-bg);
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top left, rgba(1, 105, 111, 0.08), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(1, 105, 111, 0.06), transparent 30%),
+        var(--color-bg);
     }
-    a { color: inherit; text-decoration: none; }
-    img, svg { display: block; max-width: 100%; }
-    .container { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; }
-    .skip-link { position: absolute; left: -9999px; }
-    .skip-link:focus { left: 1rem; top: 1rem; background: var(--color-surface); padding: .75rem 1rem; border-radius: var(--radius-md); }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* ===== Utility Classes ===== */
+    .container {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      background: var(--color-surface);
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      z-index: 9999;
+    }
+
+    .skip-link:focus {
+      left: var(--space-4);
+      top: var(--space-4);
+    }
+
+    /* ===== Header & Navigation ===== */
     header {
-      position: sticky; top: 0; z-index: 20; backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
       background: color-mix(in srgb, var(--color-bg) 82%, transparent);
       border-bottom: 1px solid var(--color-divider);
     }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) 0; gap: var(--space-4); }
-    .brand { display: flex; align-items: center; gap: .85rem; font-weight: 700; }
-    .brand svg { width: 34px; height: 34px; color: var(--color-primary); }
-    .nav-links { display: flex; gap: 1rem; align-items: center; }
-    .nav-links a { font-size: var(--text-sm); color: var(--color-text-muted); }
-    .nav-links a:hover { color: var(--color-text); }
-    .theme-btn, .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 44px;
-      padding: .85rem 1.1rem; border-radius: var(--radius-full); border: 1px solid var(--color-border);
-      transition: .18s ease; cursor: pointer;
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) 0;
+      gap: var(--space-4);
     }
-    .theme-btn { background: var(--color-surface); }
-    .btn.primary { background: var(--color-primary); color: var(--color-text-inverse); border-color: transparent; }
-    .btn.primary:hover { background: var(--color-primary-hover); }
-    .btn.secondary { background: var(--color-surface); }
-    main section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
-    .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: var(--space-12); align-items: center; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-weight: 700;
+      font-size: var(--text-lg);
+      color: var(--color-text);
+    }
+
+    .brand svg {
+      width: 32px;
+      height: 32px;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      font-weight: 500;
+      transition: color 0.18s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: var(--color-text);
+      outline: none;
+    }
+
+    .theme-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      width: 44px;
+      padding: 0;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      font-size: 1.2rem;
+    }
+
+    .theme-btn:hover {
+      background: var(--color-surface-2);
+      border-color: var(--color-primary);
+    }
+
+    .theme-btn:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+
+    /* ===== Main & Sections ===== */
+    main section {
+      padding: clamp(3.5rem, 8vw, 6rem) 0;
+    }
+
+    /* ===== Typography ===== */
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-display);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: var(--text-3xl);
+    }
+
+    h2 {
+      font-size: var(--text-2xl);
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--space-12);
+      align-items: center;
+    }
+
     .eyebrow {
-      display: inline-flex; align-items: center; gap: .55rem; padding: .45rem .8rem; border-radius: var(--radius-full);
-      background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text-muted); font-size: var(--text-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: var(--radius-full);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
       margin-bottom: var(--space-5);
+      font-weight: 500;
     }
-    h1, h2 { font-family: var(--font-display); line-height: 1.02; letter-spacing: -.02em; }
-    h1 { font-size: var(--text-3xl); max-width: 10ch; }
-    .hero p { margin-top: var(--space-5); max-width: 56ch; color: var(--color-text-muted); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: var(--space-8); }
-    .hero-card, .card {
-      background: color-mix(in srgb, var(--color-surface) 86%, transparent); border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+
+    h1 {
+      max-width: 12ch;
+      margin-bottom: var(--space-4);
     }
-    .hero-card { padding: var(--space-8); }
-    .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: var(--space-6); }
-    .stat { padding: 1rem; background: var(--color-surface-2); border-radius: var(--radius-md); border: 1px solid var(--color-border); }
-    .stat strong { display: block; font-size: var(--text-lg); }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: var(--space-8); }
-    .section-head p { max-width: 60ch; color: var(--color-text-muted); }
-    h2 { font-size: var(--text-2xl); }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-    .card { padding: var(--space-6); }
-    .card h3 { font-size: var(--text-lg); line-height: 1.2; margin-bottom: .75rem; }
-    .card p, .card li { color: var(--color-text-muted); }
-    .list { list-style: none; display: grid; gap: .6rem; margin-top: .9rem; }
-    .timeline { display: grid; gap: 1rem; }
-    .timeline-item { display: grid; grid-template-columns: 96px 1fr; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--color-divider); }
-    .timeline-item:first-child { border-top: none; }
-    .timeline-item .tag { color: var(--color-primary); font-weight: 700; font-size: var(--text-sm); }
-    .pill-row { display: flex; flex-wrap: wrap; gap: .7rem; }
-    .pill { padding: .55rem .85rem; border-radius: var(--radius-full); background: var(--color-surface); border: 1px solid var(--color-border); font-size: var(--text-sm); }
+
+    .hero-intro {
+      margin-top: var(--space-5);
+      max-width: 56ch;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: var(--space-8);
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 44px;
+      padding: 0.85rem 1.5rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .btn:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+
+    .btn.primary {
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      border-color: transparent;
+    }
+
+    .btn.primary:hover {
+      background: var(--color-primary-hover);
+    }
+
+    .btn.secondary {
+      background: var(--color-surface);
+      border-color: var(--color-border);
+    }
+
+    .btn.secondary:hover {
+      background: var(--color-surface-2);
+      border-color: var(--color-primary);
+    }
+
+    /* ===== Hero Card ===== */
+    .hero-card {
+      background: color-mix(in srgb, var(--color-surface) 86%, transparent);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: var(--space-8);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 0.6rem;
+      color: var(--color-text);
+    }
+
+    .hero-card p {
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-6);
+      font-size: var(--text-sm);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat {
+      padding: 1rem;
+      background: var(--color-surface-2);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: var(--text-base);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat span {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+
+    /* ===== Section Headers ===== */
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: var(--space-12);
+    }
+
+    .section-head h2 {
+      margin: 0;
+    }
+
+    .section-head p {
+      max-width: 60ch;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    /* ===== Cards & Grids ===== */
+    .card {
+      background: color-mix(in srgb, var(--color-surface) 86%, transparent);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: var(--space-6);
+      transition: all 0.18s ease;
+    }
+
+    .card:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card h3 {
+      margin-bottom: 0.75rem;
+      color: var(--color-text);
+    }
+
+    .card p,
+    .card li {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: 1.7;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* ===== Lists ===== */
+    .list {
+      list-style: none;
+      display: grid;
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+    }
+
+    .list li {
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    /* ===== Timeline ===== */
+    .timeline {
+      display: grid;
+      gap: 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--color-divider);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: 1px solid var(--color-divider);
+    }
+
+    .timeline-item .tag {
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 0.5rem;
+      color: var(--color-text);
+    }
+
+    .timeline-item p {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: 1.7;
+    }
+
+    /* ===== Skills / Pills ===== */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .pill {
+      padding: 0.55rem 1rem;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text);
+      transition: all 0.18s ease;
+    }
+
+    .pill:hover {
+      border-color: var(--color-primary);
+      background: var(--color-surface);
+    }
+
+    /* ===== Projects Section ===== */
+    .project-card {
+      background: color-mix(in srgb, var(--color-surface) 86%, transparent);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      transition: all 0.18s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--color-text);
+    }
+
+    .project-card p {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .project-tech {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      margin-bottom: var(--space-4);
+      font-style: italic;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-primary);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      transition: all 0.18s ease;
+    }
+
+    .project-link:hover {
+      color: var(--color-primary-hover);
+    }
+
+    /* ===== CTA Section ===== */
     .cta {
-      padding: var(--space-10); text-align: center; background: linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 16%, var(--color-surface)), var(--color-surface));
+      padding: var(--space-12);
+      text-align: center;
+      background: linear-gradient(135deg,
+          color-mix(in srgb, var(--color-primary) 16%, var(--color-surface)),
+          var(--color-surface));
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
     }
-    .cta p { margin: .75rem auto 1.25rem; color: var(--color-text-muted); max-width: 48ch; }
-    footer { padding: 2rem 0 3rem; color: var(--color-text-muted); }
+
+    .cta h2 {
+      margin-bottom: 0.75rem;
+    }
+
+    .cta p {
+      margin: 0.75rem auto 1.5rem;
+      color: var(--color-text-muted);
+      max-width: 50ch;
+      font-size: var(--text-sm);
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      padding: 3rem 0;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      text-align: center;
+      border-top: 1px solid var(--color-divider);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* ===== Responsive Design ===== */
     @media (max-width: 900px) {
-      .hero, .grid-3 { grid-template-columns: 1fr; }
-      .section-head { align-items: start; flex-direction: column; }
-      .nav { flex-wrap: wrap; }
+      .hero,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
     }
+
     @media (max-width: 640px) {
-      .nav-links { width: 100%; justify-content: space-between; overflow-x: auto; }
-      h1 { max-width: 100%; }
-      .timeline-item { grid-template-columns: 1fr; gap: .4rem; }
-      .hero-card, .card, .cta { padding: 1.25rem; }
-      .stat-grid { grid-template-columns: 1fr; }
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 1rem;
+        order: 3;
+      }
+
+      h1 {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+      }
+
+      h2 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+      }
+
+      .hero-actions,
+      .cta-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-card,
+      .card,
+      .project-card,
+      .cta {
+        padding: 1.25rem;
+      }
+
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pill-row {
+        gap: 0.5rem;
+      }
+
+      .pill {
+        padding: 0.5rem 0.75rem;
+        font-size: var(--text-xs);
+      }
     }
   </style>
 </head>
+
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== HEADER ===== -->
   <header>
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="KiranYesh home">
-        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" aria-hidden="true">
+      <a class="brand" href="#top" aria-label="SAIKIRAN YESHAMINA home">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M12 50L32 14L52 50" />
           <path d="M22 37H42" />
           <circle cx="32" cy="37" r="3" fill="currentColor" stroke="none" />
         </svg>
-        <span>KiranYesh · ML Portfolio</span>
+        <span>SAIKIRAN YESHAMINA</span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
+
+      <nav class="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#journey">Journey</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="https://github.com/KiranYesh/My-ML-Journey" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <button class="theme-btn" data-theme-toggle aria-label="Switch theme">◐</button>
+
+      <button class="theme-btn" data-theme-toggle aria-label="Toggle dark mode">◐</button>
     </div>
   </header>
 
-  <main id="main" class="container">
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main">
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero" id="top">
-      <div>
-        <div class="eyebrow">Machine Learning · Data Science · Continuous Learning</div>
-        <h1>Building my machine learning journey in public.</h1>
-        <p>
-          This portfolio page turns the current repository into a cleaner public-facing homepage. It highlights the same core themes already present in the repo: learning progress, notebooks, projects, resources, and an evolving focus in machine learning.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="https://github.com/KiranYesh/My-ML-Journey" target="_blank" rel="noopener noreferrer">Explore repository</a>
-          <a class="btn secondary" href="#projects">View roadmap sections</a>
+      <div class="container" style="grid-column: 1 / -1;">
+        <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--space-12); align-items: center;">
+          <div>
+            <div class="eyebrow">Machine Learning · Data Science · Public Learning</div>
+            <h1>Machine Learning Journey in Public</h1>
+            <p class="hero-intro">
+              I'm SAIKIRAN YESHAMINA, documenting my machine learning learning path through notebooks, experiments, and projects. 
+              This repository is my space to explore concepts, build intuition, and share what I discover along the way.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="https://github.com/KiranYesh/My-ML-Journey" target="_blank" rel="noopener noreferrer">
+                Explore GitHub Repository
+              </a>
+              <a class="btn secondary" href="#projects">View Projects</a>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Quick snapshot">
+            <h3>My Focus</h3>
+            <p>Building ML skills through hands-on learning, notebooks, and small projects.</p>
+            <div class="stat-grid">
+              <div class="stat">
+                <strong>Python</strong>
+                <span>Primary language</span>
+              </div>
+              <div class="stat">
+                <strong>Scikit-Learn</strong>
+                <span>ML toolkit</span>
+              </div>
+              <div class="stat">
+                <strong>Jupyter</strong>
+                <span>Notebook work</span>
+              </div>
+              <div class="stat">
+                <strong>VS Code</strong>
+                <span>Development</span>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
-      <aside class="hero-card" aria-label="Repository snapshot">
-        <h3 style="margin-bottom: .6rem;">Repository snapshot</h3>
-        <p style="color: var(--color-text-muted);">A focused space for documenting ML progress, storing experiments, and sharing practical notes.</p>
-        <div class="stat-grid">
-          <div class="stat"><strong>Python</strong><span>Primary language</span></div>
-          <div class="stat"><strong>Scikit-Learn</strong><span>Core ML toolkit</span></div>
-          <div class="stat"><strong>Jupyter</strong><span>Experiment workflow</span></div>
-          <div class="stat"><strong>VS Code</strong><span>Daily build environment</span></div>
-        </div>
-      </aside>
     </section>
 
-    <section id="about">
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="container">
       <div class="section-head">
         <div>
-          <h2>About this repo</h2>
+          <h2>About this Repository</h2>
         </div>
         <p>
-          The current repository README says this project is a dedicated place to document learning progress, store practice notebooks, and showcase projects while going deeper into data science and AI.
+          My-ML-Journey is a dedicated space where I document my progress learning machine learning and data science. 
+          It's a place for notebooks, experiments, and resources all in one place.
         </p>
       </div>
+
       <div class="grid-3">
         <article class="card">
-          <h3>Learning archive</h3>
-          <p>Use this section to surface notebooks, concept notes, and mini experiments as visible milestones instead of leaving them buried in folders.</p>
+          <h3>📓 Notebooks</h3>
+          <p>Jupyter notebooks for tutorials, experiments, and concept explorations. From data handling to model building.</p>
         </article>
         <article class="card">
-          <h3>Project showcase</h3>
-          <p>Turn end-to-end ML projects into featured case studies with a short problem statement, approach, tools used, and result.</p>
+          <h3>🔧 Projects</h3>
+          <p>End-to-end ML projects with datasets, scripts, and documented workflows that showcase real-world application.</p>
         </article>
         <article class="card">
-          <h3>Resource hub</h3>
-          <p>Collect your best books, articles, tutorials, and takeaways so visitors understand how you learn and how consistently you build.</p>
+          <h3>📚 Resources</h3>
+          <p>Curated collection of courses, books, articles, and learning materials I've found most helpful on my journey.</p>
         </article>
       </div>
     </section>
 
-    <section id="journey">
+    <!-- ===== JOURNEY SECTION ===== -->
+    <section id="journey" class="container">
       <div class="section-head">
         <div>
-          <h2>Journey map</h2>
+          <h2>Learning Roadmap</h2>
         </div>
-        <p>A strong portfolio works best when it shows momentum. This timeline layout mirrors the README’s roadmap and current-focus style in a more visual format.</p>
+        <p>
+          My journey follows a clear progression. Each stage builds on the previous one, moving from foundational concepts 
+          to more specialized topics.
+        </p>
       </div>
+
       <div class="card timeline">
         <div class="timeline-item">
           <div class="tag">Stage 01</div>
           <div>
             <h3>Foundations</h3>
-            <p>Python, data handling, notebook practice, and core ML concepts.</p>
+            <p>Core Python, NumPy, Pandas, and understanding data structures. Building the essentials for data manipulation and notebook workflows.</p>
           </div>
         </div>
+
         <div class="timeline-item">
           <div class="tag">Stage 02</div>
           <div>
-            <h3>Hands-on experiments</h3>
-            <p>Exploratory notebooks, preprocessing practice, and first predictive modeling workflows.</p>
+            <h3>Exploratory Data Analysis (EDA)</h3>
+            <p>Learning to explore datasets, visualize patterns, identify missing values, and prepare data for modeling.</p>
           </div>
         </div>
+
         <div class="timeline-item">
           <div class="tag">Stage 03</div>
           <div>
-            <h3>Project building</h3>
-            <p>End-to-end project work with datasets, scripts, and clearer storytelling around decisions and results.</p>
+            <h3>Machine Learning Models</h3>
+            <p>Introduction to Scikit-Learn, building first supervised models, understanding train-test splits, and evaluating performance.</p>
           </div>
         </div>
+
         <div class="timeline-item">
           <div class="tag">Stage 04</div>
           <div>
-            <h3>Deeper specialization</h3>
-            <p>Update this block with your active topic such as feature engineering, model evaluation, or deployment.</p>
+            <h3>Feature Engineering & Optimization</h3>
+            <p>Going deeper into feature scaling, selection, hyperparameter tuning, and model evaluation metrics.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tag">Stage 05</div>
+          <div>
+            <h3>Advanced Specialization</h3>
+            <p>Exploring advanced topics like deep learning, ensemble methods, or domain-specific applications based on interests.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills">
+    <!-- ===== SKILLS SECTION ===== -->
+    <section id="skills" class="container">
       <div class="section-head">
         <div>
-          <h2>Tools & stack</h2>
+          <h2>Tools & Tech Stack</h2>
         </div>
-        <p>The repo currently lists Python, NumPy, Pandas, Scikit-Learn, Jupyter Notebook, Git, and VS Code as the working stack. This section presents them more cleanly for visitors.</p>
+        <p>
+          The tools I work with every day. This stack allows me to learn effectively, experiment quickly, 
+          and document my progress clearly.
+        </p>
       </div>
+
       <div class="card">
         <div class="pill-row">
           <span class="pill">Python</span>
@@ -252,69 +845,123 @@
       </div>
     </section>
 
-    <section id="projects">
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects" class="container">
       <div class="section-head">
         <div>
-          <h2>Suggested sections</h2>
+          <h2>Featured Projects</h2>
         </div>
-        <p>These are the easiest portfolio sections to expand next without changing the spirit of the repository.</p>
+        <p>
+          A selection of my learning projects and case studies. Each demonstrates applying ML concepts 
+          to real-world problems. Click any project for more details.
+        </p>
       </div>
+
       <div class="grid-3">
-        <article class="card">
-          <h3>Featured notebooks</h3>
-          <ul class="list">
-            <li>Data cleaning walkthrough</li>
-            <li>EDA and visualization story</li>
-            <li>Model comparison notebook</li>
-          </ul>
+        <article class="project-card">
+          <h3>Project Title 1</h3>
+          <p>
+            A brief one-sentence description of what this project demonstrates or solves. 
+            Replace with your actual project description.
+          </p>
+          <div class="project-tech">Python • Pandas • Scikit-Learn</div>
+          <a href="#" class="project-link">Link to notebook or repo →</a>
         </article>
-        <article class="card">
-          <h3>Case-study projects</h3>
-          <ul class="list">
-            <li>Problem definition</li>
-            <li>Dataset and preprocessing</li>
-            <li>Model, metrics, and outcome</li>
-          </ul>
+
+        <article class="project-card">
+          <h3>Project Title 2</h3>
+          <p>
+            Another one-sentence project summary. Explain the problem, your approach, 
+            and what you learned from it.
+          </p>
+          <div class="project-tech">Python • NumPy • Jupyter</div>
+          <a href="#" class="project-link">Link to notebook or repo →</a>
         </article>
-        <article class="card">
-          <h3>Learning insights</h3>
-          <ul class="list">
-            <li>What worked</li>
-            <li>What failed</li>
-            <li>What you are learning next</li>
-          </ul>
+
+        <article class="project-card">
+          <h3>Project Title 3</h3>
+          <p>
+            A third project summary. Focus on the key takeaways and what makes this project 
+            interesting or educational.
+          </p>
+          <div class="project-tech">Python • Scikit-Learn • Git</div>
+          <a href="#" class="project-link">Link to notebook or repo →</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Project Title 4</h3>
+          <p>
+            Optional fourth project. Keep descriptions concise and focus on the learning 
+            outcomes or technical achievements.
+          </p>
+          <div class="project-tech">Python • Pandas • Data Visualization</div>
+          <a href="#" class="project-link">Link to notebook or repo →</a>
         </article>
       </div>
     </section>
 
-    <section>
-      <div class="card cta">
-        <h2>Ready to publish this as GitHub Pages?</h2>
-        <p>Add this file as <strong>index.html</strong> in your repo, then enable GitHub Pages from the main branch in repository settings.</p>
-        <a class="btn primary" href="https://github.com/KiranYesh/My-ML-Journey/settings/pages" target="_blank" rel="noopener noreferrer">Open Pages settings</a>
+    <!-- ===== CONTACT / CTA SECTION ===== -->
+    <section id="contact" class="container">
+      <div class="cta">
+        <h2>Let's Connect</h2>
+        <p>
+          I'm always open to discussing machine learning, data science, or learning journeys. 
+          Feel free to reach out through any of these channels.
+        </p>
+        <div class="cta-actions">
+          <a class="btn primary" href="https://github.com/KiranYesh" target="_blank" rel="noopener noreferrer">
+            Visit My GitHub
+          </a>
+          <a class="btn secondary" href="mailto:your-email@example.com">
+            Send Email
+          </a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/your-linkedin-slug/" target="_blank" rel="noopener noreferrer">
+            Connect on LinkedIn
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <div class="container" style="width:100%; padding:0;">
-      <p>Designed as a starter portfolio homepage for the My-ML-Journey repository.</p>
+    <div class="container">
+      <p>© 2026 SAIKIRAN YESHAMINA · Machine Learning Portfolio · Hosted on GitHub Pages</p>
     </div>
   </footer>
 
+  <!-- ===== THEME TOGGLE SCRIPT ===== -->
   <script>
     (function () {
-      const btn = document.querySelector('[data-theme-toggle]');
-      const root = document.documentElement;
-      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', theme);
-      btn.textContent = theme === 'dark' ? '☀︎' : '◐';
-      btn.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-        btn.textContent = theme === 'dark' ? '☀︎' : '◐';
+      const themeToggleBtn = document.querySelector('[data-theme-toggle]');
+      const html = document.documentElement;
+
+      // Initialize theme based on user preference or saved preference
+      function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        let theme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(theme);
+      }
+
+      // Apply theme to DOM and save preference
+      function applyTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        themeToggleBtn.textContent = theme === 'dark' ? '☀︎' : '◐';
+        themeToggleBtn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+      }
+
+      // Toggle theme on button click
+      themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
       });
+
+      // Initialize on page load
+      initTheme();
     }());
   </script>
 </body>
+
 </html>
