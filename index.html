@@ -477,6 +477,76 @@
       line-height: 1.7;
     }
 
+    /* ===== Journey Cards (Weekly Artifacts) ===== */
+    .journey-card {
+      background: color-mix(in srgb, var(--color-surface) 86%, transparent);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: var(--space-8);
+      transition: all 0.18s ease;
+      position: relative;
+    }
+
+    .journey-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .journey-week {
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-2);
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-4);
+    }
+
+    .journey-card h3 {
+      margin-bottom: var(--space-5);
+      color: var(--color-text);
+      font-size: var(--text-xl);
+    }
+
+    .journey-card p {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+    }
+
+    .journey-card p strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .journey-card ul {
+      list-style: none;
+      padding: 0;
+      margin-top: var(--space-4);
+    }
+
+    .journey-card li {
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .journey-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
     /* ===== Skills / Pills ===== */
     .pill-row {
       display: flex;
@@ -643,6 +713,7 @@
       .hero-card,
       .card,
       .project-card,
+      .journey-card,
       .cta {
         padding: 1.25rem;
       }
@@ -817,6 +888,46 @@
             <p>Exploring advanced topics like deep learning, ensemble methods, or domain-specific applications based on interests.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== WEEKLY ARTIFACTS SECTION ===== -->
+    <section id="artifacts" class="container">
+      <div class="section-head">
+        <div>
+          <h2>Weekly Artifacts & Milestones</h2>
+        </div>
+        <p>
+          Detailed documentation of my weekly learning activities, challenges completed, and key achievements 
+          as I progress through my machine learning journey.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="journey-card">
+          <span class="journey-week">Week 4</span>
+          <h3>Data Challenge Scenarios</h3>
+          <p>
+            This week, I explored real-world data challenges in machine learning by working through
+            scenario-based problems related to data quality, bias, scalability, privacy, and security.
+            I strengthened my understanding of how machine learning practitioners must evaluate data issues
+            carefully to build accurate, ethical, and reliable systems.
+          </p>
+          <p>
+            Through an interactive activity with an AI coach, I analyzed different scenarios, made decisions,
+            explained my reasoning, and received immediate feedback that helped deepen my problem-solving skills.
+          </p>
+          <p>
+            <strong>Achievement:</strong> Successfully completed a scenario-based machine learning activity
+            focused on data processing, cleaning, privacy, and security, improving both my technical reasoning
+            and my awareness of responsible AI practices.
+          </p>
+          <ul>
+            <li>Explored challenges involving data quality, bias, scalability, privacy, and security</li>
+            <li>Practiced data processing and cleaning strategies in applied scenarios</li>
+            <li>Strengthened decision-making and problem-solving through AI-guided feedback</li>
+          </ul>
+        </article>
       </div>
     </section>
 
